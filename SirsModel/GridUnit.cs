@@ -26,14 +26,15 @@ namespace SirsModel
             get { return _s; }
             set
             {
-                _s = value;
                 if (value > 1)
                 {
                     S = N;
+                    _r = 1;
                 }
                 else
                 {
                     S = Convert.ToInt64(value * N);
+                    _s = value;
                 }
                 
             } 
@@ -43,14 +44,16 @@ namespace SirsModel
             get { return _i; }
             set
             {
-                _i = value;
+                
                 if (value > 1)
                 {
+                    _i = 1;
                     I = N;
                 }
                 else
                 {
                     I = Convert.ToInt64(value * N);
+                    _i = value;
                 }
             }
         }
@@ -58,14 +61,15 @@ namespace SirsModel
             get { return _r; }
             set
             {
-                _r = value;
                 if (value > 1)
                 {
+                    _r = 1;
                     R = N;
                 }
                 else
                 {
                     R = Convert.ToInt64(value * N);
+                    _r = value;
                 }
             }
         }
