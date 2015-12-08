@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SirsModel
 {
     class Program
@@ -20,12 +21,17 @@ namespace SirsModel
         public static int gridXLength = 20;
         public static int gridYLength = 20;
         public static GridUnit[,] array = new GridUnit[gridXLength, gridYLength];
-
+        public static DataParser parser = new DataParser();
         static void Main(string[] args)
         {
 
+            // parse the data
+            parser.parseCSV("input.txt", "output.txt");
+
             // fill the array
             
+
+
             for (int i = 0; i < gridXLength; i++)
             {
                 for (int j = 0; j < gridYLength; j++)
