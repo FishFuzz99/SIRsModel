@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SirsModel
 {
-    class GridUnit
+    public class GridUnit
     {
 
         private double _s;
@@ -76,9 +76,18 @@ namespace SirsModel
 
         public GridUnit(long S, long I, long R, long N, int xCoord, int yCoord)
         {
-            this.s = S / N;
-            this.i = I / N;
-            this.r = R / N;
+            if (N == 0)
+            {
+                this.s = 0; 
+                this.i = 0;
+                this.r = 0; 
+            }
+            else
+            {
+                this.s = S / N;
+                this.i = I / N;
+                this.r = R / N;
+            }
             this.N = N;
             D = 0;
             this.xCoord = xCoord;
