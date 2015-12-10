@@ -122,10 +122,14 @@ namespace SirsModel
             totalRecovered += Convert.ToInt64(rPrime * grid.N);
 
             // calculate losses
+            double theDeadPrime = (rPrime * deltaT * deathRate);
             long theDead = Convert.ToInt64(rPrime * grid.N * deltaT * deathRate);
-            grid.D += theDead;
             totalDead += theDead;
-            grid.N -= theDead; // remove losses from total population, needs testing.]
+            grid.N -= theDead;
+            grid.D += theDead;
+            grid.r -= theDeadPrime;
+
+            // remove losses from total population, needs testing.]
 
             if (grid.I <= 0 || grid.N <= 0 || grid.R == grid.N)
             {
